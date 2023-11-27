@@ -13,6 +13,9 @@ const nextConfig = {
           filename: "static/chunks/remoteEntry.js",
           exposes: {
             "./index": "./pages/index.tsx",
+            "./GeometryProperty": "./components/geometryProperty",
+            "./Property": "./features/property/Property.tsx",
+            "./symbols": "./features/property/index.ts",
           },
           shared: {},
           extraOptions: {},

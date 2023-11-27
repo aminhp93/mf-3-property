@@ -1,16 +1,11 @@
-import GeometryProperty from "@/components/geometryProperty";
+import Property from "@/features/property/Property";
+import { TEST } from "@/features/property/Property.constants";
 
 const Page = () => {
   return (
     <div>
       Property
-      <GeometryProperty
-      // config={config}
-      // value={props.properties[key]}
-      // onChange={(x) => onPropertyChange({ [key]: x })}
-      // onSaveView={props.onSave}
-      // instance={props.instance}
-      />
+      <Property {...TEST} />
     </div>
   );
 };
