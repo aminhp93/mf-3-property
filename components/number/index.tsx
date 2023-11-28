@@ -17,7 +17,7 @@ const Number = (props: any) => {
         onInput={(val: any) => onChange(val)}
         maxDecimals={maxDecimals}
       /> */}
-      <CustomNumberInput />
+      <CustomNumberInput value={value} onChange={onChange} />
     </PropertyLabel>
   );
 };

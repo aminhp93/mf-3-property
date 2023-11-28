@@ -24,7 +24,7 @@ const nextConfig = {
           filename: "static/chunks/remoteEntry.js",
           exposes: {
             "./Property": "./features/property/Property.tsx",
-            "./symbols": "./features/property/index.ts",
+            "./symbols": "./features/index.ts",
           },
           shared: {},
           extraOptions: {},

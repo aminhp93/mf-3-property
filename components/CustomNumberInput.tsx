@@ -7,11 +7,12 @@ import {
 import { styled } from "@mui/system";
 
 const CustomNumberInput = React.forwardRef(function CustomNumberInput(
-  props: NumberInputProps,
+  props: any,
   ref: React.ForwardedRef<HTMLDivElement>
 ) {
   return (
     <BaseNumberInput
+      {...props}
       slots={{
         root: StyledInputRoot,
         input: StyledInputElement,
@@ -26,17 +27,22 @@ const CustomNumberInput = React.forwardRef(function CustomNumberInput(
           children: "▾",
         },
       }}
-      {...props}
+      onChange={(event, value) => {
+        console.log(value);
+        props.onChange && props.onChange(value);
+      }}
       ref={ref}
     />
   );
 });
 
-export default function NumberInputIntroduction() {
+export default function NumberInputIntroduction({ value, onChange }: any) {
   return (
     <CustomNumberInput
       aria-label="Demo number input"
       placeholder="Type a number…"
+      value={value}
+      onChange={onChange}
     />
   );
 }

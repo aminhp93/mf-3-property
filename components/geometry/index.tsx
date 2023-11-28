@@ -1,20 +1,17 @@
 // import { useTranslation } from "react-i18next";
 import Number from "../../components/number";
-import { Geometry, GeometryConfig } from "./types";
+import { Geometry } from "./types";
 
 export const borderStyles = { solid: "solid", dashed: "dashed" };
 
 type Props = {
   value: Geometry;
-  config: GeometryConfig;
   onChange: (value: Geometry) => void;
-  //   instance: string;
-  //   onSaveView: () => void;
 };
 
 const GeometryProperty = (props: Props): JSX.Element => {
-  const { value, config } = props;
-  const { value: properties } = config;
+  console.log("GeometryProperty", props);
+  const { value } = props;
 
   //   //   const { t } = useTranslation();
 
