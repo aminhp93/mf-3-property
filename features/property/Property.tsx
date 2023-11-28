@@ -11,7 +11,7 @@ import PropertyGroup from "./PropertyGroup";
 import * as TYPE from "./symbols";
 // import GroupProperty from "./properties/GroupProperty";
 // import TransformProperty from "./properties/TransformProperty";
-import GeometryProperty from "@/components/GeometryProperty";
+import GeometryProperty from "@/components/geometryProperty";
 // import StyleProperty from "./properties/StyleProperty";
 // import TextProperty from "./properties/TextProperty";
 import { standardize } from "./Property.utils";
