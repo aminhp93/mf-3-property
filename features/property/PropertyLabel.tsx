@@ -1,7 +1,7 @@
 import React from "react";
 // import css from "./Property.module.scss";
 
-export default function Property(props) {
+const PropertyLabel = (props: any) => {
   return (
     <li
     // className={css.layout}
@@ -10,4 +10,6 @@ export default function Property(props) {
       {props.children}
     </li>
   );
-}
+};
+
+export default PropertyLabel;

@@ -1,6 +1,14 @@
 /** @type {import('next').NextConfig} */
 const NextFederationPlugin = require("@module-federation/nextjs-mf");
 
+// let hostCommon = "http://localhost:3001";
+// let hostItems = "http://localhost:3002";
+
+// if (process.env.NODE_ENV === "production") {
+//   hostCommon = "https://common-omega.vercel.app";
+//   hostItems = "https://items-lilac.vercel.app";
+// }
+
 const nextConfig = {
   reactStrictMode: true,
   webpack(config, options) {
@@ -9,11 +17,12 @@ const nextConfig = {
       config.plugins.push(
         new NextFederationPlugin({
           name: "property",
-          remotes: {},
+          remotes: {
+            // common: `common@${hostCommon}/_next/static/chunks/remoteEntry.js`,
+            // items: `items@${hostItems}/_next/static/chunks/remoteEntry.js`,
+          },
           filename: "static/chunks/remoteEntry.js",
           exposes: {
-            "./index": "./pages/index.tsx",
-            "./GeometryProperty": "./components/geometryProperty",
             "./Property": "./features/property/Property.tsx",
             "./symbols": "./features/property/index.ts",
           },
