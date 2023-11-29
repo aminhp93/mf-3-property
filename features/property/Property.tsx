@@ -15,6 +15,7 @@ import GeometryProperty from "@/components/geometry";
 // import StyleProperty from "./properties/StyleProperty";
 // import TextProperty from "./properties/TextProperty";
 import { standardize } from "./Property.utils";
+import { merge } from "lodash";
 
 type Props = {
   id: string;
@@ -44,8 +45,14 @@ const Property = (props: Props) => {
   console.log(props);
   //   const { t } = useTranslation();
 
-  const onPropertyChange = (newProperty: any) => {
-    onChange({ ...properties, ...newProperty });
+  const onPropertyChange = (propertyKey: string, changedProperty: any) => {
+    const newProperty = {
+      [propertyKey]: {
+        value: changedProperty,
+      },
+    };
+    const mergedProperty = merge({}, properties, newProperty);
+    onChange(mergedProperty);
   };
 
   // if (!props.id || !props.instance || props.isMultiSelect)
@@ -66,7 +73,7 @@ const Property = (props: Props) => {
                 <Picker
                   key={id}
                   value={properties[key].value}
-                  onChange={(x: any) => onPropertyChange({ [key]: x })}
+                  onChange={(x: any) => onPropertyChange(key, x)}
                 />
               </PropertyGroup>
             </ol>

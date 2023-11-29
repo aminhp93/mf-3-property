@@ -22,6 +22,7 @@ const GeometryProperty = (props: Props): JSX.Element => {
   return (
     <>
       {/* {properties.width && ( */}
+
       <Number
         label={"width"}
         value={value.width}
