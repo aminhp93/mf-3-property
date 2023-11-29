@@ -24,15 +24,7 @@ export const Primary: Story = {
       width: 40,
       height: 40,
     },
-    config: {
-      type: Symbol("geometry"),
-      label: "Geometry",
-      value: {
-        width: 40,
-        height: 40,
-      },
-    },
+
     onChange: () => {},
-    // label: "Button",
   },
 };
